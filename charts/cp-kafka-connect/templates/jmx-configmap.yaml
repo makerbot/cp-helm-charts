@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ template "cp-kafka-connect.fullname" . }}-jmx-configmap
+  namespace: {{ template "global.namespace" . }}
   labels:
     app: {{ template "cp-kafka-connect.name" . }}
     chart: {{ template "cp-kafka-connect.chart" . }}

@@ -2,6 +2,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "cp-kafka-rest.fullname" . }}
+  namespace: {{ template "global.namespace" . }}
   labels:
     app: {{ template "cp-kafka-rest.name" . }}
     chart: {{ template "cp-kafka-rest.chart" . }}

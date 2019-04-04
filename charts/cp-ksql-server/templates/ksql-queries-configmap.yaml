@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: {{ template "global.namespace" . }}
   name: {{ template "cp-ksql-server.fullname" . }}-ksql-queries-configmap
   labels:
     app: {{ template "cp-ksql-server.name" . }}

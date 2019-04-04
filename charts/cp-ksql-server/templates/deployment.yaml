@@ -1,6 +1,7 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
+  namespace: {{ template "global.namespace" . }}
   name: {{ template "cp-ksql-server.fullname" . }}
   labels:
     app: {{ template "cp-ksql-server.name" . }}

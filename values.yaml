@@ -1,4 +1,11 @@
 ## ------------------------------------------------------
+## Global
+## ------------------------------------------------------
+global:
+  namespace: default
+
+
+## ------------------------------------------------------
 ## Zookeeper
 ## ------------------------------------------------------
 cp-zookeeper:
@@ -110,12 +117,12 @@ cp-kafka-rest:
 ## ------------------------------------------------------
 cp-kafka-connect:
   enabled: true
-  image: confluentinc/cp-kafka-connect
-  imageTag: 5.2.0
+  image: makerbot/debezium-connect
+  imageTag: stg-3
   ## Optionally specify an array of imagePullSecrets. Secrets must be manually created in the namespace.
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
-  #  - name: "regcred"
+   - name: "dockerhub"
   heapOptions: "-Xms512M -Xmx512M"
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,

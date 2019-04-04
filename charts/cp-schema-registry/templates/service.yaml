@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: {{ template "global.namespace" . }}
   name: {{ template "cp-schema-registry.fullname" . }}
   labels:
     app: {{ template "cp-schema-registry.name" . }}
